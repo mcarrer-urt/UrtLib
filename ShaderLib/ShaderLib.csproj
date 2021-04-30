@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Parser\Shader.g4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Antlr4 Include="Parser\Shader.g4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <AntOutDir>$(ProjectDir)Parser</AntOutDir>
+    </Antlr4>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Antlr4.Runtime.Standard" Version="4.9.2" />
+    <PackageReference Include="Antlr4BuildTasks" Version="8.14.0" />
+  </ItemGroup>
+
+</Project>
